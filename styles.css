@@ -33,27 +33,28 @@ body {
 
 /* Container principal */
 .container {
-    max-width: 900px;
+    max-width: 600px; /* Ajuste a largura conforme necessário */
     margin: 20px auto;
     padding: 20px;
 }
 
-/* Layout em colunas */
+/* Layout em coluna */
 .main-content {
     display: flex;
-    gap: 20px;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    gap: 20px; /* Espaço entre os elementos */
 }
 
-/* Seção do formulário */
-.form-section, .health-tips {
-    flex: 1;
+/* Seção do formulário e lista de lembretes */
+.form-section, .reminder-list {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-section h2, .health-tips h2 {
+/* Centraliza os títulos das seções */
+.form-section h2, .reminder-list h2 {
     color: #0074d9;
     text-align: center;
     margin-bottom: 15px;
@@ -95,26 +96,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Dicas de Saúde */
-.health-tips p {
-    margin: 8px 0;
-}
-
 /* Lista de lembretes */
-.reminder-list {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-.reminder-list h2 {
-    color: #0074d9;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 .reminder-list ul {
     list-style-type: none;
     padding: 0;
@@ -131,4 +113,30 @@ button:hover {
 
 .reminder-list li:hover {
     background-color: #eef6ff;
+}
+
+/* Estilo da lista de dicas */
+.tips {
+    margin-top: 20px; /* Margem acima das dicas */
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Menos padding no container */
+    }
+
+    .clock-icon {
+        width: 30px; /* Dimensões reduzidas para o ícone */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .tips {
+        margin-top: 20px; /* Espaçamento suficiente acima das dicas */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .reminder-list {
+        margin-top: 20px; /* Espaçamento entre lembretes e dicas */
+    }
 }
